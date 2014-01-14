@@ -1,0 +1,44 @@
+{% extends "base.html"%}
+
+{% block content %}
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>New Post</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+		<style>
+			body { padding-top: 70px; }
+		</style>
+ 	</head>
+	<body>     
+		<h1>Create a New Post:</h1>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<ul class="nav navbar-nav">
+				<li><a href="/">Main Page</a></li>
+				<li><a href="newpost">New Post</a></li>
+			</ul>
+		</nav>
+		<form  method = "post">
+			<div class="form-group">
+				<label>Title:</label>
+				<input type="text" class="form-control" name="subject" placeholder="Enter Title"value={{title}}>
+			</div>
+			<div class="form-group">
+				<label>Blog Post:</label>
+				<textarea class="form-control" rows="10" name="content">{{blog}}</textarea>
+			</div>
+			<div class = "error"> {{error}}</div>
+			<button class ="btn btn-primary" type="submit">Submit</button>
+
+		</form>
+		
+		<hr>
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<body>
+</html>
+{% endblock %}
