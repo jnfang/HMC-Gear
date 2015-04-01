@@ -1,0 +1,4 @@
+cron:
+- description: emails for overdue gear
+  url: /email
+  schedule: every day 00:00

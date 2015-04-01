@@ -1,0 +1,41 @@
+{% extends "base.html"%}
+
+{% block content %}
+		
+<form class="form-horizontal" method="post">
+    <h2>Borrow Gear</h2>
+	<div class="form-group">
+		<label class="col-sm-2 control-label"> Gear #:</label>
+		<input class="col-sm-2" placeholder="Gear #" name= "number">
+		<div style="color: red">{{gearError}}</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label"> Loaned to:</label>
+		<input class="col-sm-2"  placeholder="Email of person it is being loaned to" name="holder">
+		<div style="color: red">{{holderError}}</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Loan Duration (days)</label>
+		<input class="col-sm-2"  placeholder="days" name="days" value=7>
+		<div style="color: red">{{daysError}}</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label"> Password:</label>
+		<input class="col-sm-2" placeholder="Password" name="password" type="text" >
+		<div style = "color: red">{{passError}}</div>
+	</div>
+	<div style = "color: red"> {{error}}</div>
+
+	<br>
+	<br>
+	<button type="submit" class="btn btn-success">Submit!</button>
+</form>
+		<hr>
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<body>
+</html>
+{% endblock %}
