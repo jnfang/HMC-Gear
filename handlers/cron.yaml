@@ -1,5 +1,5 @@
 cron:
 - description: email people when there gear is overdue
   url: /crontask
-  schedule: every 24 hours
+  schedule: every 48 hours
 

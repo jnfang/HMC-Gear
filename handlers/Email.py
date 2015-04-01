@@ -11,5 +11,5 @@ class Email(Handler):
 			sender_address = 'overduegear@hmc-gear.appspotmail.com'
 			destination_address = [g.holder.email, 'njoseph@college.harvard.edu', 'wbloxham@college.harvard.edu', 'rradovanovic@college.harvard.edu']
 			subject = 'Overdue Gear'
-			body = "You have a piece of gear that is overdue, " + g.number + ". Please return it as soon as possible."""
+			body = "You have a piece of gear that is overdue, " + g.number + ". Please return it at the next meeting. If you can't make it please email one of the gear czars to find a time."""
 			mail.send_mail(sender_address, destination_address, subject, body)
