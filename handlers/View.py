@@ -1,10 +1,9 @@
 from google.appengine.ext import db
 from BaseHandler import Handler
 from Db import *
+import cgi
 class View(Handler):
-	def get(self, pagename):
-		page = db.GqlQuery('SELECT * FROM Page WHERE name=:pagename', pagename=pagename).get()
-		if page:
-			self.render("wikiPage.html", text=page.text)
-		else:
-			self.redirect('/_edit'+pagename)
+	def get(self):
+		itemQuery = db.GqlQuery("SELECT * FROM Gear")
+		gear_items = itemQuery.fetch(limit=None)
+		self.render("view.html", gear_items=gear_items)

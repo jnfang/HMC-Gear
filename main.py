@@ -18,7 +18,7 @@ from Email import Email
 application = webapp2.WSGIApplication([('/input', Input),
 								('/return', Return),
                                 ('/view', View),
-								('/addGear', AddGear),
+								('/add', AddGear),
                                 ('/', Input),
 								('/email', Email)
                                 ],

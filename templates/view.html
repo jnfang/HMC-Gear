@@ -1,0 +1,45 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<div id="content">
+  <!-- Content that should be draggable for refreshing goes in here -->
+  <div class="container">
+	<h2>View Gear</h2>
+	<div class="list-group">
+	{% for item in gear_items %}
+	  <a class="list-group-item">
+	  <h4 class="list-group-item-heading">{{ item.number|e }}</h4>
+	    <p class="list-group-item-text">{{ item.description|e }}</p>
+	    <p class="list-group-item-text">Holder: {{  item.holder|e }}</p>
+	  </a>
+	{% endfor %}
+	</div>
+  </div>
+</div>
+<script src="static/js/hammer.2.0.4.js"></script>
+<script src="static/js/wptr.1.1.js"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+
+<script>
+  window.onload = function() {
+    WebPullToRefresh.init( {
+      loadingFunction: exampleLoadingFunction
+    } );
+  };
+  var exampleLoadingFunction = function() {
+  return new Promise( function( resolve, reject ) {
+    // Run some async loading code here
+
+    if ( true /* if the loading worked */ ) {
+      console.log("Refresh successful.")
+      resolve();
+    } else {
+      reject();
+    }
+  } );
+};
+</script>
+{% endblock %}
+		

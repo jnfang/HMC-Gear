@@ -24,6 +24,6 @@ class AddGear(Handler):
 		if itemQuery.count() == 0:
 			item = Gear(number=gearNum, description=description)
 			item.put()
-			self.redirect("/addGear")
+			self.redirect("/add")
 		else:
 			self.write_form(error = "The item number is taken")
